@@ -1,10 +1,10 @@
 {
-  "name": "CaffeineCoders",
-  "short_name": "Caffeine",
+  "name": "Fireium",
+  "short_name": "Fireium",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#111827",
+  "theme_color": "#FF6B35",
   "icons": [
     {
       "src": "/images/logo.png",

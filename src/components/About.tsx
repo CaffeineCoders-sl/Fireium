@@ -81,7 +81,7 @@ const About = () => {
           </h2>
           
           <p className="text-gray-600">
-            CaffeineCoders was founded on a simple principle: combine the energy of coffee with the precision of code to create exceptional digital solutions. Our team of passionate developers, designers, and strategists work together to bring your ideas to life.
+            Fireium was founded on a simple principle: combine the energy of innovation with the precision of code to create exceptional digital solutions. Our team of passionate developers, designers, and strategists work together to bring your ideas to life.
           </p>
           
           <p className="text-gray-600">

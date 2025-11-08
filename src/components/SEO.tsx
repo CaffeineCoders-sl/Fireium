@@ -11,7 +11,7 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({ title, description, url, image, keywords = [], jsonLd }) => {
-  const siteTitle = 'CaffeineCoders — Custom Software, SaaS & AI Development';
+  const siteTitle = 'Fireium — Custom Software, SaaS & AI Development';
   const metaTitle = title ? `${title} | ${siteTitle}` : siteTitle;
 
   return (

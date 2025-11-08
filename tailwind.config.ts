@@ -53,15 +53,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				coffee: {
-					light: '#333333',
-					DEFAULT: '#222222',
-					dark: '#000000'
-				},
-				cream: '#f1f1f1',
-				code: {
-					blue: '#8B5CF6',
-					green: '#10B981'
+				fireium: {
+					DEFAULT: '#FF6B35',
+					dark: '#1A1A1A',
+					light: '#FFB366',
+					accent: '#FF8C42',
+					bg: '#F8F5F0'
 				}
 			},
 			borderRadius: {

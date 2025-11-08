@@ -35,19 +35,19 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, fea
         animate={{ rotateY: isFlipped ? 180 : 0 }}
       >
         {/* Front of card */}
-        <div className="absolute inset-0 backface-hidden bg-white border border-black/10 rounded-lg overflow-hidden shadow-lg p-8">
+        <div className="absolute inset-0 backface-hidden bg-gradient-to-br from-white to-orange-50/30 dark:from-slate-900 dark:to-orange-950/20 border border-orange-200/40 dark:border-orange-500/30 rounded-xl overflow-hidden shadow-xl dark:shadow-xl dark:shadow-orange-500/10 p-8 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-300">
           <div className="absolute top-4 right-4 z-10">
-            <span className="inline-block px-3 py-1 text-xs font-medium bg-black/5 rounded-full text-black/70">
+            <span className="inline-block px-3 py-1 text-xs font-medium bg-orange-100 dark:bg-orange-500/20 rounded-full text-orange-700 dark:text-orange-400">
               {category}
             </span>
           </div>
           
-          <div className={`w-14 h-14 rounded-lg flex items-center justify-center mb-6`} style={{ backgroundColor: `${color}20`, color }}>
+          <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-gradient-to-br from-orange-100 dark:from-orange-500/20 to-orange-50 dark:to-orange-950/20 border border-orange-200/50 dark:border-orange-500/30`} style={{ color: '#FF6B35' }}>
             {icon}
           </div>
           
-          <h3 className="text-2xl font-bold mb-4">{title}</h3>
-          <p className="text-gray-600 mb-6">{description}</p>
+          <h3 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">{title}</h3>
+          <p className="text-slate-700 dark:text-slate-300 mb-6">{description}</p>
           
           <motion.ul 
             className="space-y-3"
@@ -55,9 +55,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, fea
             animate={{ opacity: isHovered ? 1 : 0.5 }}
           >
             {features.slice(0, 3).map((feature, index) => (
-              <li key={index} className="flex items-start">
+              <li key={index} className="flex items-start text-slate-700 dark:text-slate-300">
                 <motion.span 
-                  className="mr-2 mt-1 text-black"
+                  className="mr-2 mt-1 text-orange-600 dark:text-orange-500 font-bold"
                   initial={{ scale: 1 }}
                   animate={{ scale: isHovered ? [1, 1.2, 1] : 1 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
@@ -70,7 +70,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, fea
           <div className="absolute bottom-6 left-8 right-8 flex justify-between items-center">
             <button
               onClick={() => setIsFlipped(true)}
-              className="text-sm font-medium text-black hover:underline"
+              className="text-sm font-medium text-orange-600 dark:text-orange-500 hover:text-orange-700 dark:hover:text-orange-400 transition-colors"
             >
               View benefits
             </button>
@@ -82,23 +82,23 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, fea
             >
               <Link 
                 to="/contact" 
-                className="inline-flex items-center font-medium text-black group"
+                className="inline-flex items-center font-medium text-orange-600 dark:text-orange-500 group hover:text-orange-700 dark:hover:text-orange-400 transition-colors"
               >
                 Get a quote
-                <span className={`ml-2 group-hover:ml-3 transition-all`} style={{ color }}>→</span>
+                <span className={`ml-2 group-hover:ml-3 transition-all`}>→</span>
               </Link>
             </motion.div>
           </div>
         </div>
         
         {/* Back of card */}
-        <div className="absolute inset-0 backface-hidden rotateY-180 bg-white border border-black/10 rounded-lg overflow-hidden shadow-lg p-8">
-          <h4 className="text-xl font-bold mb-6">Key Benefits</h4>
+        <div className="absolute inset-0 backface-hidden rotateY-180 bg-gradient-to-br from-white to-orange-50/30 dark:from-slate-900 dark:to-orange-950/20 border border-orange-200/40 dark:border-orange-500/30 rounded-xl overflow-hidden shadow-xl dark:shadow-xl dark:shadow-orange-500/10 p-8">
+          <h4 className="text-xl font-bold mb-6 text-slate-900 dark:text-white">Key Benefits</h4>
           
           <ul className="space-y-4">
             {benefits.map((benefit, index) => (
-              <li key={index} className="flex items-start">
-                <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-black/5 text-black mr-3 flex-shrink-0">
+              <li key={index} className="flex items-start text-slate-700 dark:text-slate-300">
+                <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-orange-100 dark:bg-orange-500/20 text-orange-700 dark:text-orange-400 font-bold text-sm mr-3 flex-shrink-0">
                   {index + 1}
                 </span>
                 <span>{benefit}</span>
@@ -108,7 +108,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, fea
           
           <button
             onClick={() => setIsFlipped(false)}
-            className="absolute bottom-6 left-8 text-sm font-medium text-black hover:underline"
+            className="absolute bottom-6 left-8 text-sm font-medium text-orange-600 dark:text-orange-500 hover:text-orange-700 dark:hover:text-orange-400 transition-colors"
           >
             Back to details
           </button>
@@ -249,7 +249,7 @@ const Services = ({ initialCategory = 'all', showFilter = true }: ServicesProps)
       description: "Create stunning, responsive websites built on modern frameworks that captivate your audience.",
       features: ["Custom web applications", "E-commerce solutions", "Progressive web apps", "Responsive design"],
       benefits: ["Enhanced user experience", "Increased conversion rates", "Better SEO performance", "Cross-platform compatibility"],
-      color: "#000000",
+      color: "#FF6B35",
       category: "web"
     },
     {
@@ -258,7 +258,7 @@ const Services = ({ initialCategory = 'all', showFilter = true }: ServicesProps)
       description: "Build native and cross-platform mobile apps that deliver exceptional user experiences.",
       features: ["iOS and Android apps", "Cross-platform development", "UI/UX design", "App maintenance"],
       benefits: ["Reach users on their preferred devices", "High performance native experiences", "Consistent brand experience", "Offline functionality"],
-      color: "#000000",
+      color: "#FF6B35",
       category: "web"
     },
     {
@@ -267,7 +267,7 @@ const Services = ({ initialCategory = 'all', showFilter = true }: ServicesProps)
       description: "Develop robust backend systems and APIs that power your digital experiences.",
       features: ["API development", "Database design", "Cloud integration", "Performance optimization"],
       benefits: ["Scalable infrastructure", "Reliable data management", "Secure information handling", "Optimized performance"],
-      color: "#000000",
+      color: "#FF6B35",
       category: "data"
     },
     {
@@ -276,7 +276,7 @@ const Services = ({ initialCategory = 'all', showFilter = true }: ServicesProps)
       description: "Create intuitive and beautiful user interfaces that enhance user experience.",
       features: ["Interface design", "User experience design", "Prototyping", "Design systems"],
       benefits: ["Increased user satisfaction", "Reduced learning curve", "Higher retention rates", "Consistent brand identity"],
-      color: "#000000",
+      color: "#FF6B35",
       category: "marketing"
     },
     {
@@ -285,7 +285,7 @@ const Services = ({ initialCategory = 'all', showFilter = true }: ServicesProps)
       description: "Leverage the power of artificial intelligence to gain insights and automate processes.",
       features: ["Predictive analytics", "Natural language processing", "Computer vision", "AI consulting"],
       benefits: ["Data-driven decision making", "Process automation", "Personalized experiences", "Competitive advantage"],
-      color: "#000000",
+      color: "#FF6B35",
       category: "ai"
     },
     {
@@ -294,7 +294,7 @@ const Services = ({ initialCategory = 'all', showFilter = true }: ServicesProps)
       description: "Develop conversational agents using natural language processing to handle inquiries and tasks.",
       features: ["Customer service automation", "NLP implementation", "Multi-platform integration", "Conversational UI"],
       benefits: ["Reduced response times", "Improved customer satisfaction", "Cost savings in support operations", "24/7 availability"],
-      color: "#000000",
+      color: "#FF6B35",
       category: "ai"
     },
     {
@@ -303,7 +303,7 @@ const Services = ({ initialCategory = 'all', showFilter = true }: ServicesProps)
       description: "Use ML algorithms to forecast trends such as customer behavior, sales performance, and more.",
       features: ["Customer churn prediction", "Sales forecasting", "Inventory management", "Risk assessment"],
       benefits: ["Data-driven decision-making", "Optimized resource allocation", "Proactive strategic planning", "Competitive advantage"],
-      color: "#000000",
+      color: "#FF6B35",
       category: "ai"
     },
     {
@@ -312,7 +312,7 @@ const Services = ({ initialCategory = 'all', showFilter = true }: ServicesProps)
       description: "Develop deep learning solutions for image recognition and object detection applications.",
       features: ["Image recognition", "Object detection", "Visual search", "Automated quality control"],
       benefits: ["Improved accuracy in visual tasks", "Reduced manual oversight", "New service offerings", "Enhanced automation"],
-      color: "#000000",
+      color: "#FF6B35",
       category: "ai"
     },
     {
@@ -321,7 +321,7 @@ const Services = ({ initialCategory = 'all', showFilter = true }: ServicesProps)
       description: "Leverage anomaly detection and pattern recognition to identify suspicious activities.",
       features: ["Transaction monitoring", "Anomaly detection", "Behavioral analysis", "Real-time alerting"],
       benefits: ["Enhanced security measures", "Reduced financial losses", "Increased trust among clients", "Regulatory compliance"],
-      color: "#000000",
+      color: "#FF6B35",
       category: "ai"
     },
     {
@@ -330,7 +330,7 @@ const Services = ({ initialCategory = 'all', showFilter = true }: ServicesProps)
       description: "Create ML-driven tools that automate data cleaning, integration, and analysis.",
       features: ["Data cleaning automation", "Information extraction", "Pattern recognition", "Data visualization"],
       benefits: ["Streamlined workflows", "Lower operational costs", "Faster decision-making", "Reduced human error"],
-      color: "#000000",
+      color: "#FF6B35",
       category: "data"
     },
     {
@@ -339,7 +339,7 @@ const Services = ({ initialCategory = 'all', showFilter = true }: ServicesProps)
       description: "Build systems that optimize digital ad targeting, content creation, and campaign management.",
       features: ["Ad targeting optimization", "Content personalization", "Campaign analytics", "Customer segmentation"],
       benefits: ["Higher ROI on marketing campaigns", "Effective audience targeting", "Better customer engagement", "Data-driven strategies"],
-      color: "#000000",
+      color: "#FF6B35",
       category: "marketing"
     },
     {
@@ -348,7 +348,7 @@ const Services = ({ initialCategory = 'all', showFilter = true }: ServicesProps)
       description: "Develop applications for voice commands, transcription, and accessibility enhancements.",
       features: ["Speech-to-text conversion", "Voice commands", "Audio analysis", "Language processing"],
       benefits: ["Improved accessibility", "Enhanced user interfaces", "Hands-free operation", "New interaction paradigms"],
-      color: "#000000",
+      color: "#FF6B35",
       category: "ai"
     },
     {
@@ -357,7 +357,7 @@ const Services = ({ initialCategory = 'all', showFilter = true }: ServicesProps)
       description: "Utilize NLP to analyze social media, reviews, and feedback to gauge brand sentiment.",
       features: ["Social media monitoring", "Review analysis", "Brand sentiment tracking", "Customer feedback processing"],
       benefits: ["Real-time insights into customer attitudes", "Better crisis management", "Informed marketing strategies", "Customer satisfaction tracking"],
-      color: "#000000",
+      color: "#FF6B35",
       category: "ai"
     },
     {
@@ -366,7 +366,7 @@ const Services = ({ initialCategory = 'all', showFilter = true }: ServicesProps)
       description: "Apply machine learning for diagnostic imaging, patient data analysis, and health recommendations.",
       features: ["Medical image analysis", "Patient data processing", "Health recommendation systems", "Medical research assistance"],
       benefits: ["Improved diagnostic accuracy", "Personalized treatment plans", "Enhanced patient outcomes", "Efficient healthcare delivery"],
-      color: "#000000",
+      color: "#FF6B35",
       category: "ai"
     },
     {
@@ -375,7 +375,7 @@ const Services = ({ initialCategory = 'all', showFilter = true }: ServicesProps)
       description: "Boost your online presence with strategic digital marketing campaigns.",
       features: ["SEO optimization", "Content strategy", "Social media marketing", "Analytics & reporting"],
       benefits: ["Increased visibility", "Higher conversion rates", "Brand awareness", "Measurable results"],
-      color: "#000000",
+      color: "#FF6B35",
       category: "marketing"
     },
     {
@@ -384,7 +384,7 @@ const Services = ({ initialCategory = 'all', showFilter = true }: ServicesProps)
       description: "Protect your digital assets with comprehensive security solutions and best practices.",
       features: ["Security audits", "Vulnerability assessment", "Data protection", "Compliance consulting"],
       benefits: ["Reduced security risks", "Protected sensitive data", "Regulatory compliance", "Customer trust"],
-      color: "#000000",
+      color: "#FF6B35",
       category: "data"
     }
   ];
@@ -421,9 +421,9 @@ const Services = ({ initialCategory = 'all', showFilter = true }: ServicesProps)
   }, [activeCategory, forceUpdate]); // Added forceUpdate to dependencies
 
   return (
-    <div className="bg-white" ref={rootRef}>
+    <div className="bg-gradient-to-b from-white via-orange-50/50 to-white dark:from-slate-950 dark:via-orange-950/10 dark:to-slate-950" ref={rootRef}>
       {/* Add debug element to monitor state (remove in production) */}
-      <div className="text-xs text-gray-400 text-center mb-2">
+      <div className="text-xs text-orange-600/40 dark:text-orange-500/40 text-center mb-2">
         Current category: {activeCategory} | Found {filteredServices.length} services
       </div>
       
@@ -491,11 +491,11 @@ const Services = ({ initialCategory = 'all', showFilter = true }: ServicesProps)
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <div className="text-gray-500 mb-4">
-                    <AlertTriangle size={48} className="mx-auto opacity-50" />
+                  <div className="text-orange-500/50 dark:text-orange-500/30 mb-4">
+                    <AlertTriangle size={48} className="mx-auto" />
                   </div>
-                  <h3 className="text-xl font-medium text-gray-700 mb-2">No services found</h3>
-                  <p className="text-gray-500">Try selecting a different category</p>
+                  <h3 className="text-xl font-medium text-slate-700 dark:text-slate-300 mb-2">No services found</h3>
+                  <p className="text-slate-600 dark:text-slate-400">Try selecting a different category</p>
                 </motion.div>
               )}
             </AnimatePresence>

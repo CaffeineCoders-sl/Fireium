@@ -16,7 +16,7 @@ const Footer = () => {
   };
   
   return (
-    <footer className="bg-white pt-16 pb-8 relative border-t border-gray-100">
+    <footer className="bg-white dark:bg-slate-950 pt-16 pb-8 relative border-t border-orange-200/30 dark:border-orange-500/10">
       {/* Grid pattern background */}
       <div className="absolute inset-0 grid-bg opacity-40"></div>
       
@@ -35,22 +35,21 @@ const Footer = () => {
           }}
         >
           <motion.div className="space-y-4" variants={fadeInUpVariants}>
-            <Link to="/" className="flex items-center space-x-2 group">
-              <div className="w-10 h-10 overflow-hidden rounded-full bg-gray-100 transition-all duration-300 group-hover:shadow-lg border border-gray-200">
+            <Link to="/" className="flex items-center space-x-3 group">
+              <div className="w-12 h-12 overflow-hidden rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 dark:from-orange-500 dark:to-orange-600 transition-all duration-300 group-hover:shadow-lg border border-orange-400/50 flex items-center justify-center">
                 <img 
                   src="/lovable-uploads/5c9e8331-194f-4d58-8b01-bb4dbb6018a7.png" 
-                  alt="CaffeineCoders company logo, a creative tech brand" 
-                  className="w-full h-full object-cover scale-[0.7] transform group-hover:scale-[0.75] transition-transform duration-300"
-                  width="40" height="40" loading="lazy"
+                  alt="Fireium company logo" 
+                  className="w-full h-full object-cover"
+                  width="48" height="48" loading="lazy"
                 />
               </div>
-              <span className="text-xl font-bold tracking-tight">
-                <span className="text-secondary">Caffeine</span>
-                <span className="text-black">Coders</span>
+              <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
+                <span className="text-orange-600 dark:text-orange-500">Fireium</span>
               </span>
             </Link>
             
-            <p className="text-gray-600">
+            <p className="text-slate-600 dark:text-slate-400">
               Fueling innovation, one line of code at a time. We blend technology expertise with creative thinking to deliver exceptional digital solutions.
             </p>
             
@@ -59,7 +58,7 @@ const Footer = () => {
                 href="https://twitter.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-gray-100 text-gray-700 hover:bg-secondary/20 hover:text-secondary transition-colors"
+                className="p-2 rounded-full bg-orange-100 dark:bg-orange-500/10 text-orange-600 dark:text-orange-400 hover:bg-orange-200 dark:hover:bg-orange-500/20 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/20"
                 aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5" />
@@ -68,7 +67,7 @@ const Footer = () => {
                 href="https://instagram.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-gray-100 text-gray-700 hover:bg-secondary/20 hover:text-secondary transition-colors"
+                className="p-2 rounded-full bg-orange-100 dark:bg-orange-500/10 text-orange-600 dark:text-orange-400 hover:bg-orange-200 dark:hover:bg-orange-500/20 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/20"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
@@ -77,7 +76,7 @@ const Footer = () => {
                 href="https://linkedin.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-gray-100 text-gray-700 hover:bg-secondary/20 hover:text-secondary transition-colors"
+                className="p-2 rounded-full bg-orange-100 dark:bg-orange-500/10 text-orange-600 dark:text-orange-400 hover:bg-orange-200 dark:hover:bg-orange-500/20 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/20"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
@@ -86,7 +85,7 @@ const Footer = () => {
                 href="https://github.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-gray-100 text-gray-700 hover:bg-secondary/20 hover:text-secondary transition-colors"
+                className="p-2 rounded-full bg-orange-100 dark:bg-orange-500/10 text-orange-600 dark:text-orange-400 hover:bg-orange-200 dark:hover:bg-orange-500/20 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/20"
                 aria-label="GitHub"
               >
                 <Github className="h-5 w-5" />
@@ -95,7 +94,7 @@ const Footer = () => {
           </motion.div>
           
           <motion.div variants={fadeInUpVariants}>
-            <h3 className="text-lg font-bold mb-4 text-black">Quick Links</h3>
+            <h3 className="text-lg font-bold mb-4 text-slate-900 dark:text-white">Quick Links</h3>
             <ul className="space-y-3">
               {[
                 { text: "Home", link: "/" },
@@ -107,9 +106,9 @@ const Footer = () => {
                 <li key={index}>
                   <Link 
                     to={item.link}
-                    className="text-gray-600 hover:text-secondary transition-colors flex items-center group"
+                    className="text-slate-600 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors flex items-center group"
                   >
-                    <span className="w-0 h-[1px] bg-secondary group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+                    <span className="w-0 h-[1px] bg-orange-600 dark:bg-orange-500 group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
                     {item.text}
                   </Link>
                 </li>
@@ -118,7 +117,7 @@ const Footer = () => {
           </motion.div>
           
           <motion.div variants={fadeInUpVariants}>
-            <h3 className="text-lg font-bold mb-4 text-black">Services</h3>
+            <h3 className="text-lg font-bold mb-4 text-slate-900 dark:text-white">Services</h3>
             <ul className="space-y-3">
               {[
                 { text: "Custom Software", link: "/services#software" },
@@ -130,9 +129,9 @@ const Footer = () => {
                 <li key={index}>
                   <Link 
                     to={item.link}
-                    className="text-gray-600 hover:text-secondary transition-colors flex items-center group"
+                    className="text-slate-600 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors flex items-center group"
                   >
-                    <span className="w-0 h-[1px] bg-secondary group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
+                    <span className="w-0 h-[1px] bg-orange-600 dark:bg-orange-500 group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2"></span>
                     {item.text}
                   </Link>
                 </li>
@@ -141,23 +140,23 @@ const Footer = () => {
           </motion.div>
           
           <motion.div variants={fadeInUpVariants}>
-            <h3 className="text-lg font-bold mb-4 text-black">Contact Us</h3>
+            <h3 className="text-lg font-bold mb-4 text-slate-900 dark:text-white">Contact Us</h3>
             <ul className="space-y-3">
               <li>
                 <a 
                   href="mailto:hello@caffeinecoders.com"
-                  className="flex items-center text-gray-600 hover:text-secondary transition-colors"
+                  className="flex items-center text-slate-600 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors"
                 >
-                  <Mail className="mr-2 h-5 w-5 text-secondary" />
+                  <Mail className="mr-2 h-5 w-5 text-orange-600 dark:text-orange-500" />
                  caffeinecoders.sl@gmail.com
                 </a>
               </li>
               <li>
                 <a 
                   href="tel:+94767319134"
-                  className="flex items-center text-gray-600 hover:text-secondary transition-colors"
+                  className="flex items-center text-slate-600 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors"
                 >
-                  <Phone className="mr-2 h-5 w-5 text-secondary" />
+                  <Phone className="mr-2 h-5 w-5 text-orange-600 dark:text-orange-500" />
                   +94 76 731 9134
                 </a>
               </li>
@@ -165,10 +164,10 @@ const Footer = () => {
           </motion.div>
         </motion.div>
         
-        <div className="pt-8 border-t border-gray-200">
+        <div className="pt-8 border-t border-orange-200/30 dark:border-orange-500/10">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 text-sm">
-              &copy; {currentYear} CaffeineCoders. All rights reserved.
+            <p className="text-slate-500 dark:text-slate-500 text-sm">
+              &copy; {currentYear} Fireium. All rights reserved.
             </p>
           </div>
         </div>

@@ -54,7 +54,7 @@ const AboutPage = () => {
       <div className="section-container">
         <div className="text-center mb-16">
           <div className="tag mb-3 bg-secondary/10 text-secondary">Our Story</div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">About <span className="text-secondary">CaffeineCoders</span></h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">About <span className="text-secondary">Fireium</span></h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Get to know the team behind the code and discover our journey from humble beginnings to industry excellence.
           </p>
@@ -67,13 +67,13 @@ const AboutPage = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-6 text-black">Who We Are</h2>
                 <p className="text-gray-600 mb-4">
-                  Founded in 2024, CaffeineCoders started as a small team of passionate developers with a shared vision: to create innovative software solutions that fuel business growth and deliver exceptional user experiences.
+                  Founded in 2024, Fireium started as a small team of passionate developers with a shared vision: to create innovative software solutions that fuel business growth and deliver exceptional user experiences.
                 </p>
                 <p className="text-gray-600 mb-4">
                   We're a young but rapidly growing team of developers, designers, strategists, and project managers who bring diverse skills and perspectives to every project we undertake.
                 </p>
                 <p className="text-gray-600">
-                  Our name reflects our approach—we combine the energy and alertness that comes from a great cup of coffee with the precision and creativity of expert coding.
+                  Our name reflects our approach—we combine innovation and ignite transformation through expert coding.
                 </p>
               </div>
               <div className="relative flex items-center justify-center py-10">
@@ -90,7 +90,7 @@ const AboutPage = () => {
                       </div>
                       <div>
                         <h3 className="text-3xl font-bold tracking-tight">
-                          Caffeine<span className="text-secondary">Coders</span>
+                          Fireium
                         </h3>
                         <p className="text-sm text-gray-500">Brewing Digital Excellence</p>
                       </div>
@@ -98,7 +98,7 @@ const AboutPage = () => {
                   ) : (
                     <img 
                       src="/images/logo.png" 
-                      alt="CaffeineCoders Logo" 
+                      alt="Fireium Logo" 
                       className="max-w-full h-auto max-h-84 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105"
                       onLoad={() => setLogoLoaded(true)}
                       onError={() => setLogoError(true)}
@@ -229,7 +229,7 @@ const AboutPage = () => {
                 {
                   year: "2024",
                   title: "Foundation",
-                  description: "CaffeineCoders was founded with a mission to create innovative digital solutions for modern businesses."
+                  description: "Fireium was founded with a mission to create innovative digital solutions for modern businesses."
                 },
                 {
                   year: "Q3 2024",

@@ -269,17 +269,17 @@ const Index = () => {
     >
       <SEO
         title="Software Company in Colombo"
-        description="CaffeineCoders is a Colombo-based software company building custom web & mobile apps, SaaS platforms, eCommerce solutions and AI automation to help businesses grow."
-        url="https://caffeinecoders.dev/"
-        image="https://caffeinecoders.dev/og-image.png"
+        description="Fireium is a Colombo-based software company building custom web & mobile apps, SaaS platforms, eCommerce solutions and AI automation to help businesses grow."
+        url="https://fireium.dev/"
+        image="https://fireium.dev/og-image.png"
         keywords={["software company Colombo","SaaS development Sri Lanka","custom software Sri Lanka","eCommerce development Colombo"]}
         jsonLd={[{
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          "name": "CaffeineCoders",
-          "image": "https://caffeinecoders.dev/og-image.png",
-          "@id": "https://caffeinecoders.dev/",
-          "url": "https://caffeinecoders.dev/",
+          "name": "Fireium",
+          "image": "https://fireium.dev/og-image.png",
+          "@id": "https://fireium.dev/",
+          "url": "https://fireium.dev/",
           "telephone": "+94-76-731-9134",
           "address": {
             "@type": "PostalAddress",

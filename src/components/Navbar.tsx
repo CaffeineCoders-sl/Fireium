@@ -29,31 +29,32 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkBackground = false, isScrolled = 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   
-  // Color adjustments for dark background
-  const textColor = (isDarkBackground && !isScrolled) ? 'text-white' : 'text-black';
-  const logoTextColor = (isDarkBackground && !isScrolled) 
+  // Premium orange and black theme
+  const textColor = (isDarkBackground && !isScrolled) ? 'text-white' : 'text-slate-900';
+  const logoColor = (isDarkBackground && !isScrolled) 
     ? 'text-white dark:text-white' 
-    : 'text-secondary';
+    : 'text-orange-600 dark:text-orange-500 font-bold';
   
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'
+      isScrolled 
+        ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl shadow-lg border-b border-orange-200/30 dark:border-orange-500/10 py-3' 
+        : 'bg-white dark:bg-slate-950 py-5'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          {/* Logo - Text Only */}
-          <Link to="/" className="flex items-center space-x-2 group">
-          <div className="w-18 h-16 overflow-hidden rounded-lg bg-gray-100 transition-all duration-300 group-hover:shadow-lg border border-gray-200">
-                <img 
-                  src="/lovable-uploads/5c9e8331-194f-4d58-8b01-bb4dbb6018a7.png" 
-                  alt="CaffeineCoders company logo, a creative tech brand" 
-                  className="w-full h-full object-cover transition-transform duration-300"
-                  width="72" height="64" loading="eager"
-                />
-              </div>
-            <span className={`text-xl font-bold tracking-tight ${textColor}`}>
-              <span className={logoTextColor}>Caffeine</span>
-              <span>Coders</span>
+          {/* Logo - with premium styling */}
+          <Link to="/" className="flex items-center space-x-3 group hover:opacity-80 transition-opacity">
+            <div className="w-12 h-12 overflow-hidden rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 shadow-lg border border-orange-400/50 flex items-center justify-center flex-shrink-0">
+              <img 
+                src="/lovable-uploads/5c9e8331-194f-4d58-8b01-bb4dbb6018a7.png" 
+                alt="Fireium AI company logo" 
+                className="w-full h-full object-cover"
+                width="48" height="48" loading="eager"
+              />
+            </div>
+            <span className={`text-2xl font-bold tracking-tight ${textColor} ${logoColor}`}>
+              Fireium
             </span>
           </Link>
           
@@ -63,23 +64,20 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkBackground = false, isScrolled = 
               <Link
                 key={item}
                 to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                className={`relative px-3 py-2 rounded-md transition-all duration-300 
-                  ${location.pathname === (item === 'Home' ? '/' : `/${item.toLowerCase()}`) 
-                    ? 'font-medium' : ''} 
-                  ${isDarkBackground && !isScrolled 
-                    ? 'text-white hover:text-white/80' 
-                    : 'text-gray-800 hover:text-black'}`}
+                className={`relative px-4 py-2 rounded-lg transition-all duration-300 font-medium ${
+                  location.pathname === (item === 'Home' ? '/' : `/${item.toLowerCase()}`) 
+                    ? 'text-orange-600 dark:text-orange-500 bg-orange-50 dark:bg-orange-500/10' 
+                    : isDarkBackground && !isScrolled
+                    ? 'text-white hover:text-orange-300' 
+                    : 'text-slate-700 dark:text-slate-300 hover:text-orange-600 dark:hover:text-orange-500'
+                }`}
               >
                 {item}
               </Link>
             ))}
             <Link 
               to="/contact" 
-              className={`ml-4 px-6 py-2 rounded-full ${
-                isDarkBackground && !isScrolled
-                  ? 'bg-white text-black hover:bg-white/90'
-                  : 'bg-black text-white hover:bg-black/90'
-              } transition-all`}
+              className="ml-4 px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-orange-500/30 bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700"
             >
               Let's Talk
             </Link>
@@ -87,10 +85,10 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkBackground = false, isScrolled = 
           
           {/* Mobile Menu Toggle */}
           <button 
-            className={`md:hidden p-2 rounded-md transition-colors focus:outline-none ${
+            className={`md:hidden p-2 rounded-lg transition-all duration-300 focus:outline-none ${
               isDarkBackground && !isScrolled 
                 ? 'text-white hover:bg-white/10' 
-                : 'text-gray-800 hover:bg-gray-100'
+                : 'text-slate-900 dark:text-white hover:bg-orange-100 dark:hover:bg-orange-500/10'
             }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
@@ -102,13 +100,13 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkBackground = false, isScrolled = 
       
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md shadow-md animate-fade-in">
-          <nav className="flex flex-col space-y-2 p-4 max-w-7xl mx-auto">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl shadow-lg border-t border-orange-200/30 dark:border-orange-500/10 animate-fade-in">
+          <nav className="flex flex-col space-y-2 p-4 max-w-7xl mx-auto w-full">
             {['Home', 'About', 'Services', 'Portfolio', 'Contact'].map((item) => (
               <Link
                 key={item}
                 to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                className="px-4 py-3 text-gray-800 hover:text-black"
+                className="px-4 py-3 rounded-lg text-slate-900 dark:text-white hover:bg-orange-100 dark:hover:bg-orange-500/10 hover:text-orange-600 dark:hover:text-orange-500 transition-all duration-300"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item}
@@ -116,7 +114,7 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkBackground = false, isScrolled = 
             ))}
             <Link 
               to="/contact" 
-              className="mt-4 bg-black text-white px-6 py-3 rounded-full flex justify-center items-center space-x-2"
+              className="mt-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-lg flex justify-center items-center space-x-2 font-semibold hover:from-orange-600 hover:to-orange-700 transition-all shadow-lg"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <span>Let's Talk</span>
