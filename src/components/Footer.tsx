@@ -36,7 +36,7 @@ const Footer = () => {
         >
           <motion.div className="space-y-4" variants={fadeInUpVariants}>
             <Link to="/" className="flex items-center space-x-3 group">
-              <div className="w-12 h-12 overflow-hidden rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 dark:from-orange-500 dark:to-orange-600 transition-all duration-300 group-hover:shadow-lg border border-orange-400/50 flex items-center justify-center">
+              <div className="w-12 h-12 overflow-hidden rounded-xl bg-white dark:bg-white transition-all duration-300 group-hover:shadow-lg border border-slate-200/50 dark:border-slate-300/50 flex items-center justify-center">
                 <img 
                   src="/lovable-uploads/5c9e8331-194f-4d58-8b01-bb4dbb6018a7.png" 
                   alt="Fireium company logo" 
